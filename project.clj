@@ -17,7 +17,11 @@
                                :update :always}]]
   :profiles {:main-hwserver {:main core.async.zmq.hwserver}
              :main-hwclient {:main core.async.zmq.hwclient}
-             :main-version {:main core.async.zmq.version}}
+             :main-version {:main core.async.zmq.version}
+             :main-wuserver {:main core.async.zmq.wuserver}
+             :main-wuclient {:main core.async.zmq.wuclient}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
             "run-hwclient" ["with-profile" "main-hwclient" "run"]
-            "run-version" ["with-profile" "main-version" "run"]})
+            "run-version" ["with-profile" "main-version" "run"]
+            "run-wuserver" ["with-profile" "main-wuserver" "run"]
+            "run-wuclient" ["with-profile" "main-wuclient" "run"]})
