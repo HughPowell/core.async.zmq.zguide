@@ -16,6 +16,8 @@
                                :password [:gpg :env/NEXUS_PASSWORD]
                                :update :always}]]
   :profiles {:main-hwserver {:main core.async.zmq.hwserver}
-             :main-hwclient {:main core.async.zmq.hwclient}}
+             :main-hwclient {:main core.async.zmq.hwclient}
+             :main-version {:main core.async.zmq.version}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
-            "run-hwclient" ["with-profile" "main-hwclient" "run"]})
+            "run-hwclient" ["with-profile" "main-hwclient" "run"]
+            "run-version" ["with-profile" "main-version" "run"]})
