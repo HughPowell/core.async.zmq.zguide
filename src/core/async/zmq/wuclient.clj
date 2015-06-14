@@ -16,7 +16,7 @@
   Collects weather updates and finds avg temp in zipcode"
   ([] (-main "10001 "))
   ([zipcode]
-   (let [subscriber (zmq/chan :sub :connect :tcp "localhost:5556" zipcode)
+   (let [subscriber (zmq/sub-chan :connect :tcp "localhost:5556" zipcode)
          n 100]
      (println "Average temperature for zipcode" zipcode "was"
               (/

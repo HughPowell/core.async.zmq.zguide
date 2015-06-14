@@ -7,7 +7,7 @@
   Binds PUB socket to tcp://*:5556
   Publishes random weather updates"
   []
-  (let [publisher (zmq/chan :pub :bind :tcp "*:5556")]
+  (let [publisher (zmq/pub-chan :bind :tcp "*:5556")]
     (while true
       (let [data (apply str (interpose " " [(rand-int 100000)
                                             (- (rand-int 215) 80)
