@@ -22,7 +22,9 @@
              :main-wuclient {:main core.async.zmq.wuclient}
              :main-taskvent {:main core.async.zmq.taskvent}
              :main-taskwork {:main core.async.zmq.taskwork}
-             :main-tasksink {:main core.async.zmq.tasksink}}
+             :main-tasksink {:main core.async.zmq.tasksink}
+             :main-msreader {:main core.async.zmq.msreader}
+             :main-mspoller {:main core.async.zmq.mspoller}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
             "run-hwclient" ["with-profile" "main-hwclient" "run"]
             "run-version" ["with-profile" "main-version" "run"]
@@ -30,4 +32,6 @@
             "run-wuclient" ["with-profile" "main-wuclient" "run"]
             "run-taskvent" ["with-profile" "main-taskvent" "run"]
             "run-taskwork" ["with-profile" "main-taskwork" "run"]
-            "run-tasksink" ["with-profile" "main-tasksink" "run"]})
+            "run-tasksink" ["with-profile" "main-tasksink" "run"]
+            "run-msreader" ["with-profile" "main-msreader" "run"]
+            "run-mspoller" ["with-profile" "main-mspoller" "run"]})
