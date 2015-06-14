@@ -10,11 +10,10 @@
   (let [sender (zmq/push-chan :bind :tcp "*:5557")
         sink (zmq/push-chan :connect :tcp "localhost:5558")
         send-task! (fn
-                     "Send out a random amount of work and return it"
                      [sender]
-                    (let [work (+ (rand-int 100) 1)]
-                      (async/>!! sender work)
-                      work))]
+                     (let [work (+ (rand-int 100) 1)]
+                       (async/>!! sender work)
+                       work))]
     (println "Press Enter when the workers are ready: ")
     (read-line)
     (println "Sending tasks to workers...")
