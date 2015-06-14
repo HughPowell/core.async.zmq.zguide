@@ -24,7 +24,10 @@
              :main-taskwork {:main core.async.zmq.taskwork}
              :main-tasksink {:main core.async.zmq.tasksink}
              :main-msreader {:main core.async.zmq.msreader}
-             :main-mspoller {:main core.async.zmq.mspoller}}
+             :main-mspoller {:main core.async.zmq.mspoller}
+             :main-rrclient {:main core.async.zmq.rrclient}
+             :main-rrworker {:main core.async.zmq.rrworker}
+             :main-rrbroker {:main core.async.zmq.rrbroker}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
             "run-hwclient" ["with-profile" "main-hwclient" "run"]
             "run-version" ["with-profile" "main-version" "run"]
@@ -34,4 +37,7 @@
             "run-taskwork" ["with-profile" "main-taskwork" "run"]
             "run-tasksink" ["with-profile" "main-tasksink" "run"]
             "run-msreader" ["with-profile" "main-msreader" "run"]
-            "run-mspoller" ["with-profile" "main-mspoller" "run"]})
+            "run-mspoller" ["with-profile" "main-mspoller" "run"]
+            "run-rrclient" ["with-profile" "main-rrclient" "run"]
+            "run-rrworker" ["with-profile" "main-rrworker" "run"]
+            "run-rrbroker" ["with-profile" "main-rrbroker" "run"]})
