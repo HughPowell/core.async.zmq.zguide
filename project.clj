@@ -27,7 +27,8 @@
              :main-mspoller {:main core.async.zmq.mspoller}
              :main-rrclient {:main core.async.zmq.rrclient}
              :main-rrworker {:main core.async.zmq.rrworker}
-             :main-rrbroker {:main core.async.zmq.rrbroker}}
+             :main-rrbroker {:main core.async.zmq.rrbroker}
+             :main-msgqueue {:main core.async.zmq.msgqueue}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
             "run-hwclient" ["with-profile" "main-hwclient" "run"]
             "run-version" ["with-profile" "main-version" "run"]
@@ -40,4 +41,5 @@
             "run-mspoller" ["with-profile" "main-mspoller" "run"]
             "run-rrclient" ["with-profile" "main-rrclient" "run"]
             "run-rrworker" ["with-profile" "main-rrworker" "run"]
-            "run-rrbroker" ["with-profile" "main-rrbroker" "run"]})
+            "run-rrbroker" ["with-profile" "main-rrbroker" "run"]
+            "run-msgqueue" ["with-profile" "main-msgqueue" "run"]})
