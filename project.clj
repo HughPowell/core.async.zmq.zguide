@@ -28,7 +28,8 @@
              :main-rrclient {:main core.async.zmq.rrclient}
              :main-rrworker {:main core.async.zmq.rrworker}
              :main-rrbroker {:main core.async.zmq.rrbroker}
-             :main-msgqueue {:main core.async.zmq.msgqueue}}
+             :main-msgqueue {:main core.async.zmq.msgqueue}
+             :main-wuproxy {:main core.async.zmq.wuproxy}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
             "run-hwclient" ["with-profile" "main-hwclient" "run"]
             "run-version" ["with-profile" "main-version" "run"]
@@ -42,4 +43,5 @@
             "run-rrclient" ["with-profile" "main-rrclient" "run"]
             "run-rrworker" ["with-profile" "main-rrworker" "run"]
             "run-rrbroker" ["with-profile" "main-rrbroker" "run"]
-            "run-msgqueue" ["with-profile" "main-msgqueue" "run"]})
+            "run-msgqueue" ["with-profile" "main-msgqueue" "run"]
+            "run-wuproxy" ["with-profile" "main-wuproxy" "run"]})
