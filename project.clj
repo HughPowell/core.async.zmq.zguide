@@ -31,7 +31,8 @@
              :main-msgqueue {:main core.async.zmq.msgqueue}
              :main-wuproxy {:main core.async.zmq.wuproxy}
              :main-taskwork2 {:main core.async.zmq.taskwork2}
-             :main-tasksink2 {:main core.async.zmq.tasksink2}}
+             :main-tasksink2 {:main core.async.zmq.tasksink2}
+             :main-mtserver {:main core.async.zmq.mtserver}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
             "run-hwclient" ["with-profile" "main-hwclient" "run"]
             "run-version" ["with-profile" "main-version" "run"]
@@ -46,4 +47,5 @@
             "run-rrworker" ["with-profile" "main-rrworker" "run"]
             "run-rrbroker" ["with-profile" "main-rrbroker" "run"]
             "run-taskwork2" ["with-profile" "main-taskwork2" "run"]
-            "run-tasksink2" ["with-profile" "main-tasksink2" "run"]})
+            "run-tasksink2" ["with-profile" "main-tasksink2" "run"]
+            "run-mtserver" ["with-profile" "main-mtserver" "run"]})
