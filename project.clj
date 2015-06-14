@@ -19,9 +19,15 @@
              :main-hwclient {:main core.async.zmq.hwclient}
              :main-version {:main core.async.zmq.version}
              :main-wuserver {:main core.async.zmq.wuserver}
-             :main-wuclient {:main core.async.zmq.wuclient}}
+             :main-wuclient {:main core.async.zmq.wuclient}
+             :main-taskvent {:main core.async.zmq.taskvent}
+             :main-taskwork {:main core.async.zmq.taskwork}
+             :main-tasksink {:main core.async.zmq.tasksink}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
             "run-hwclient" ["with-profile" "main-hwclient" "run"]
             "run-version" ["with-profile" "main-version" "run"]
             "run-wuserver" ["with-profile" "main-wuserver" "run"]
-            "run-wuclient" ["with-profile" "main-wuclient" "run"]})
+            "run-wuclient" ["with-profile" "main-wuclient" "run"]
+            "run-taskvent" ["with-profile" "main-taskvent" "run"]
+            "run-taskwork" ["with-profile" "main-taskwork" "run"]
+            "run-tasksink" ["with-profile" "main-tasksink" "run"]})
