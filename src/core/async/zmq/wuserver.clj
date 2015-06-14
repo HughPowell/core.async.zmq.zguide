@@ -9,7 +9,10 @@
   []
   (let [publisher (zmq/pub-chan :bind :tcp "*:5556")]
     (while true
-      (let [data (apply str (interpose " " [(rand-int 100000)
-                                            (- (rand-int 215) 80)
-                                            (+ (rand-int 50) 10)]))]
-      (async/>!! publisher data)))))
+      (let [zipcode (rand-int 100000)
+            temperature (- (rand-int 215) 80)
+            relhumidity (+ (rand-int 50) 10)]
+        (let [data (apply str (interpose " " [zipcode
+                                              temperature
+                                              relhumidity]))]
+          (async/>!! publisher data))))))
