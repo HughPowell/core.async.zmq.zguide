@@ -35,7 +35,9 @@
              :main-mtserver {:main core.async.zmq.mtserver}
              :main-mtrelay {:main core.async.zmq.mtrelay}
              :main-syncpub {:main core.async.zmq.syncpub}
-             :main-syncsub {:main core.async.zmq.syncsub}}
+             :main-syncsub {:main core.async.zmq.syncsub}
+             :main-psenvpub {:main core.async.zmq.psenvpub}
+             :main-psenvsub {:main core.async.zmq.psenvsub}}
   :aliases {"run-hwserver" ["with-profile" "main-hwserver" "run"]
             "run-hwclient" ["with-profile" "main-hwclient" "run"]
             "run-version" ["with-profile" "main-version" "run"]
@@ -54,4 +56,6 @@
             "run-mtserver" ["with-profile" "main-mtserver" "run"]
             "run-mtrelay" ["with-profile" "main-mtrelay" "run"]
             "run-syncpub" ["with-profile" "main-syncpub" "run"]
-            "run-syncsub" ["with-profile" "main-syncsub" "run"]})
+            "run-syncsub" ["with-profile" "main-syncsub" "run"]
+            "run-psenvpub" ["with-profile" "main-psenvpub" "run"]
+            "run-psenvsub" ["with-profile" "main-psenvsub" "run"]})
