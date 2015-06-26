@@ -51,6 +51,8 @@
             "run-rrclient" ["with-profile" "main-rrclient" "run"]
             "run-rrworker" ["with-profile" "main-rrworker" "run"]
             "run-rrbroker" ["with-profile" "main-rrbroker" "run"]
+            "run-msgqueue" ["with-profile" "main-msgqueue" "run"]
+            "run-wuproxy" ["with-profile" "main-wuproxy" "run"]
             "run-taskwork2" ["with-profile" "main-taskwork2" "run"]
             "run-tasksink2" ["with-profile" "main-tasksink2" "run"]
             "run-mtserver" ["with-profile" "main-mtserver" "run"]

@@ -19,8 +19,9 @@
    (let [subscriber (zmq/sub-chan :connect :tcp "localhost:5556" zipcode)
          n 100]
      (println "Average temperature for zipcode" zipcode "was"
-              (/
-               (->> (async/take n subscriber)
-                    (async/reduce #(+ %1 (get-temperature %2)) 0)
-                    async/<!!)
-               n)))))
+              (float
+               (/
+                (->> (async/take n subscriber)
+                     (async/reduce #(+ %1 (get-temperature %2)) 0)
+                     async/<!!)
+                n))))))

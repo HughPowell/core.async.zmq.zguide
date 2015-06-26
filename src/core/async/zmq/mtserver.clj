@@ -5,11 +5,11 @@
 (defn -main
   "Multithreaded Hello World server"
   []
-  (let [clients (zmq/chan :router :bind :tcp "*:5555")
-        workers (zmq/chan :dealer :bind :inproc "workers")]
+  (let [clients (zmq/router-chan :bind :tcp "*:5555")
+        workers (zmq/dealer-chan :bind :inproc "workers")]
     (dotimes [n 10]
       (async/go-loop
-       [receiver (zmq/chan :rep :connect :inproc "workers")]
+       [receiver (zmq/rep-chan :connect :inproc "workers")]
        (->>
         (async/<! receiver)
         (format "Received request: [%s]")

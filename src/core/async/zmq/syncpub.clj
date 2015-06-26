@@ -8,7 +8,7 @@
   "Synchronized publisher"
   []
   (let [publisher (zmq/pub-chan :bind :tcp "*:5561" :sndhwm 1100000)
-        syncservice (zmq/chan :rep :bind :tcp "*:5562")]
+        syncservice (zmq/rep-chan :bind :tcp "*:5562")]
     (println "Waiting for subscribers")
     (dotimes [n subscribers-expected]
       (async/<!! syncservice)

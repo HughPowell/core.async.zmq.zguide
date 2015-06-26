@@ -6,7 +6,8 @@
   "Task sink - design 2
   Adds pub-sub flow to send kill signal to workers"
   []
-  (let [receiver (zmq/pull-chan :bind :tcp "*:5558")]
+  (let [receiver (zmq/pull-chan :bind :tcp "*:5558")
+        controller (zmq/pub-chan :bind :tcp "*:5559")]
     (async/<!! receiver)
     (let [now! #(.getTime (java.util.Date.))
           start-time (now!)]
@@ -19,5 +20,5 @@
        start-time
        (- (now!))
        (format "Total elapsed time: %d msec")
-       println)))
-  (async/>!! (zmq/pub-chan :bind :tcp "*:5559") "KILL"))
+       println))
+    (async/>!! controller "KILL")))

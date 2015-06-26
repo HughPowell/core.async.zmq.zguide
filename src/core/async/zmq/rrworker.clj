@@ -7,7 +7,7 @@
   Connects REP socket to tcp://localhost:5560
   Expects \"Hello\" from client, replies with \"World\""
   []
-  (let [responder (zmq/chan :rep :connect :tcp "localhost:5560")]
+  (let [responder (zmq/rep-chan :connect :tcp "localhost:5560")]
     (while true
       (->>
        (async/<!! responder)
@@ -15,5 +15,4 @@
        println)
       ;; Do some "work"
       (async/<!! (async/timeout 1000))
-      (println "Sending reply")
       (async/>!! responder "World"))))

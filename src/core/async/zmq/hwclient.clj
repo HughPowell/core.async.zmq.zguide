@@ -4,7 +4,7 @@
 
 (defn -main []
   ""
-  (let [client (zmq/chan :req :connect :tcp "localhost:5555")
+  (let [client (zmq/req-chan :connect :tcp "localhost:5555")
         data "Hello"]
     (dotimes [n 10]
       (println "Sending" data n "...")

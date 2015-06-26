@@ -6,7 +6,7 @@
   "Synchronized subscriber"
   []
   (let [subscriber (zmq/sub-chan :connect :tcp "localhost:5561" nil)
-        syncclient (zmq/chan :req :connect :tcp "localhost:5562")]
+        syncclient (zmq/req-chan :connect :tcp "localhost:5562")]
     (async/<!! (async/timeout 1000))
     (async/>!! syncclient "")
     (async/<!! syncclient)

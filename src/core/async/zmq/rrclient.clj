@@ -7,7 +7,7 @@
   Connects REQ socket to tcp://localhost:5559
   Sends \"Hello\" to server, expects \"World\" back"
   []
-  (let [requester (zmq/chan :req :connect :tcp "localhost:5559")]
+  (let [requester (zmq/req-chan :connect :tcp "localhost:5559")]
     (dotimes [n 10]
       (println "Sending Hello")
       (async/>!! requester "Hello")

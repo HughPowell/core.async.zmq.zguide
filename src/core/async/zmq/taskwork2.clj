@@ -8,15 +8,12 @@
   []
   (let [receiver (zmq/pull-chan :connect :tcp "localhost:5557")
         sender (zmq/push-chan :connect :tcp "localhost:5558")
-        controller (zmq/sub-chan :connect :tcp "localhost:5559" nil)]
-    (async/go-loop
-     []
-      (let [work (async/<! receiver)]
-        (println work)
-        ;; Do the "work"
-        (async/<! (async/timeout work))
-        (async/>! sender work)
-        (recur)))
-    (async/<!! controller)
-    (async/close! receiver)
-    (async/close! sender)))
+        controller (zmq/sub-chan :connect :tcp "localhost:5559" nil)
+        do-work (fn [work]
+                  (println work)
+                  ;; Do work
+                  (async/<!! (async/timeout work))
+                  (async/>!! sender work))]
+    (while (async/alt!!
+            receiver ([work] (do-work work))
+            controller ([_] nil)))))
