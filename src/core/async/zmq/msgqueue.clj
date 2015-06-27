@@ -1,6 +1,7 @@
 (ns core.async.zmq.msgqueue
   (:require [clojure.core.async :as async]
-            [core.async.zmq :as zmq]))
+            [core.async.zmq :as zmq]
+            [core.async.devices :as devices]))
 
 (defn -main
   "Simple message queuing broker
@@ -8,4 +9,4 @@
   []
   (let [frontend (zmq/router-chan :bind :tcp "*:5559")
         backend (zmq/dealer-chan :bind :tcp "*:5560")]
-    (zmq/chan-proxy frontend backend)))
+    (devices/capturing-proxy frontend backend)))

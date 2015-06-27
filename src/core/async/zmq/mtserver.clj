@@ -1,6 +1,7 @@
 (ns core.async.zmq.mtserver
   (:require [clojure.core.async :as async]
-            [core.async.zmq :as zmq]))
+            [core.async.zmq :as zmq]
+            [core.async.devices :as devices]))
 
 (defn -main
   "Multithreaded Hello World server"
@@ -18,4 +19,4 @@
        (async/<! (async/timeout 1000))
        (async/>! receiver "World")
        (recur receiver)))
-    (zmq/chan-proxy clients workers)))
+    (devices/capturing-proxy clients workers)))
